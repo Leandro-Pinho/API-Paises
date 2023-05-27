@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* :root {
+    --color-bg: #fafafa;
+    --color-bg-seg: #ffffff;
+    --color-text: #000000;
+} */
+
+body {
+    --color-bg: #fafafa;
+    --color-bg-seg: #ffffff;
+    --color-text: #000000;
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--color-text);
+    background: var(--color-bg);
+}
+
+/* para a função dark do site */
+body.dark-mode {
+    --color-bg: #212e37;
+    --color-bg-seg: #2B3743;
+    --color-text: #fff;
+}
+
+/* css gerais */
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 80%;
+}
+
+.img-fluid {
+    width: 100%;
+}
+
+/* espaços */
+my-2 {
+    /* 2x16px */
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* navbar */
+.navbar {
+    background: var(--color-bg-seg);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-dark-mode {
+    background: var(--color-bg-seg);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.btn-dark-mode:hover {
+    opacity: 0.6;
+}
+
+/* filter */
+.filter-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* main */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--color-bg-seg);
+    border-radius: 0.35rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.card img {
+    border-top-left-radius: 0.35rem;
+    border-top-right-radius: 0.35rem;
+}
+
+.card-content {
+    padding: 2rem;
+}
+
+.card-content h3 {
+    margin-bottom: 1.5rem;
+}
+
+/* responsive */
+@media (max-width: 1000px) {
+    .grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 750px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar-content {
+        font-size: 0.6rem;
+    }
+
+    .filter-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
