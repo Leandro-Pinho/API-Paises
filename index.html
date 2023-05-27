@@ -8,6 +8,8 @@
     <title>Api Países</title>
     <script src="https://kit.fontawesome.com/6283a3899a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="custom-select.css">
+
 </head>
 
 <body>
@@ -22,12 +24,14 @@
     </nav>
 
     <header class="container filter-content my-2">
-        <form>
+        <form class="form-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
             <input type="text" placeholder="Digite o país">
         </form>
-        <div>
+        <div class="custom-select" style="width:200px;">
             <select>
                 <option value="">Filter por region</option>
+                <option value="">Todos</option>
                 <option value="Africa">Africa</option>
                 <option value="Americas">Americas</option>
                 <option value="Asia">Asia</option>
@@ -157,6 +161,7 @@
 
     <script src="JS/index.js"></script>
     <script src="JS/dark-mode.js"></script>
+    <script src="JS/custom-select.js"></script>
 
 </body>
 

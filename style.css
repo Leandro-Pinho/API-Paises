@@ -4,11 +4,13 @@
     box-sizing: border-box;
 }
 
-/* :root {
-    --color-bg: #fafafa;
+:root {
+    /* --color-bg: #fafafa;
     --color-bg-seg: #ffffff;
-    --color-text: #000000;
-} */
+    --color-text: #000000; */
+    --box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --border-radius: 0.35rem;
+}
 
 body {
     --color-bg: #fafafa;
@@ -49,7 +51,7 @@ my-2 {
 /* navbar */
 .navbar {
     background: var(--color-bg-seg);
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    box-shadow: var(--box-shadow);
 }
 
 .navbar-content {
@@ -65,6 +67,7 @@ my-2 {
     cursor: pointer;
     opacity: 1;
     transition: 0.3s;
+    color: var(--color-text);
 }
 
 .btn-dark-mode:hover {
@@ -78,6 +81,26 @@ my-2 {
     align-items: center;
 }
 
+.form-search {
+    background: var(--color-bg-seg);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+}
+
+.form-search .fa-solid {
+    /* color: var(--color-text); */
+    opacity: 0.5s;
+}
+.form-search input {
+    border: none;
+    outline: none;
+    margin-left: 1rem;
+    background: var(--color-bg-seg);
+    /* width: 300px; */
+    color: var(--color-text);
+}
+
 /* main */
 .grid {
     display: grid;
@@ -87,13 +110,14 @@ my-2 {
 
 .card {
     background: var(--color-bg-seg);
-    border-radius: 0.35rem;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
 }
 
 .card img {
-    border-top-left-radius: 0.35rem;
-    border-top-right-radius: 0.35rem;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
 }
 
 .card-content {
@@ -129,5 +153,14 @@ my-2 {
 
     .grid {
         grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .form-search {
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+
+    .form-search input {
+        width: 85%;
     }
 }

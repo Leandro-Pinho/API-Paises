@@ -5,7 +5,7 @@ btnDark.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 
     // para mudar o butao de acordo com o tema
-    if (document.body.classList === 'dark-mode') {
+    if (document.body.className === 'dark-mode') {
         btnDark.innerHTML = `
         <i class="fa-regular fa-sun"></i>
         Light Mode
