@@ -1,3 +1,5 @@
+const filtros = data => {
+
 var x, i, j, l, ll, selElmnt, a, b, c;
 /* Look for any elements with the class "custom-select": */
 x = document.getElementsByClassName("custom-select");
@@ -13,6 +15,7 @@ for (i = 0; i < l; i++) {
     /* For each element, create a new DIV that will contain the option list: */
     b = document.createElement("DIV");
     b.setAttribute("class", "select-items select-hide");
+
     for (j = 1; j < ll; j++) {
         /* For each option in the original select element,
         create a new DIV that will act as an option item: */
@@ -25,6 +28,7 @@ for (i = 0; i < l; i++) {
             s = this.parentNode.parentNode.getElementsByTagName("select")[0];
             sl = s.length;
             h = this.parentNode.previousSibling;
+
             for (i = 0; i < sl; i++) {
                 if (s.options[i].innerHTML == this.innerHTML) {
                     s.selectedIndex = i;
@@ -35,6 +39,18 @@ for (i = 0; i < l; i++) {
                         y[k].removeAttribute("class");
                     }
                     this.setAttribute("class", "same-as-selected");
+
+                    // pegando o valor selecionado na select para usar para filtrar por regiao
+                    // console.log(s.options[i].value)
+                    const query = s.options[i].value
+                    // filtro, que selecionar o no da regiao, vai trazer os valores
+                    if (query === '') {
+                        banderillas(data)
+                    } else {
+                        const arrayFiltrado = data.filter(item => item.region === query)
+                        banderillas(arrayFiltrado)
+                    }
+
                     break;
                 }
             }
@@ -78,3 +94,6 @@ function closeAllSelect(elmnt) {
 /* If the user clicks anywhere outside the select box,
 then close all select boxes: */
 document.addEventListener("click", closeAllSelect);
+
+}
+

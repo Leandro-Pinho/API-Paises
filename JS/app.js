@@ -11,7 +11,8 @@ const fetchData = async () => {
         banderillas(data)
         // chamando essa função para a pesquisa 
         formularioCliente(data)
-        // filtros(data)
+        // função que chama o filtro do select
+        filtros(data)
     } catch (error) {
         console.log(error)
     }
@@ -36,6 +37,9 @@ const banderillas = data => {
                  <p>
                      <b>Region</b>
                      ${item.region}
+                 </p>
+                 <p>
+                     <a href="pais.html?name=${item.name}">Mais info<a/>
                  </p>
              </div>
          </article>
