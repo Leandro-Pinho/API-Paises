@@ -128,6 +128,11 @@ my-2 {
     margin-bottom: 1.5rem;
 }
 
+.card-content a {
+    margin: 0;
+    padding: 0;
+}
+
 /* responsive */
 @media (max-width: 1000px) {
     .grid {

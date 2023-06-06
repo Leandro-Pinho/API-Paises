@@ -1,12 +1,14 @@
 const bandeiras = document.getElementById('bandeiras')
 
 document.addEventListener('DOMContentLoaded', e => {
-     fetchData()
- })
+    fetchData()
+})
+
 
 const fetchData = async () => {
     try {
-        const res = await fetch('api.json')
+
+        const res = await fetch('https://restcountries.com/v2/all')
         const data = await res.json()
         banderillas(data)
         // chamando essa função para a pesquisa 
@@ -19,9 +21,9 @@ const fetchData = async () => {
 }
 
 const banderillas = data => {
-     let elementos = ''
-     data.forEach(item => {
-         elementos += `
+    let elementos = ''
+    data.forEach(item => {
+        elementos += `
          <article class="card">
              <img src="${item.flag}" class="img-fluid">
              <div class="card-content">
@@ -39,12 +41,14 @@ const banderillas = data => {
                      ${item.region}
                  </p>
                  <p>
-                     <a href="pais.html?name=${item.name}">Mais info<a/>
+                     <a href="pais.html?name=${item.name}">Mais info</a>
                  </p>
              </div>
          </article>
          `
-     });
+    });
 
     bandeiras.innerHTML = elementos
 }
+
+

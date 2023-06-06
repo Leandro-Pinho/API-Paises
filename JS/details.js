@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', e => {
 
 const fetchData = async () => {
     try {
-        const res = await fetch('api.json')
+        const res = await fetch('https://restcountries.com/v2/all')
         const data = await res.json()
 
         const filtroData = data.filter(item => item.name === params)
